@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  linebot:
+    build: .
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    ports:
+      - "5000:5000"
