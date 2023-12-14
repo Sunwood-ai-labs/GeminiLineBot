@@ -6,6 +6,9 @@
 
 https://hamaruki.com/building-a-chatbot-geminowl-that-combines-gemini-api-and-line-bot-api/
 
+
+![image](https://github.com/Sunwood-ai-labs/GeminiLineBot/assets/108736814/528a100c-07ef-46f6-bb0a-f0a72c7e0fdb)
+
 ```env
 
 GEMINI_API_KEY=あなたのGeminiAPIキー
