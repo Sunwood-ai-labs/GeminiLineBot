@@ -3,11 +3,18 @@ from line_bot_base import LineBot
 from linebot.models import TextSendMessage
 import google.generativeai as genai
 import os
+from pyngrok import ngrok, conf
 
 # 環境変数から設定を読み込み
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 ACCESS_TOKEN = os.getenv("LINE_ACCESS_TOKEN")
 CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
+NGROK_AUTHTOKEN = os.getenv("NGROK_AUTHTOKEN")
+
+# Ngrok設定
+conf.get_default().auth_token = NGROK_AUTHTOKEN
+ngrok_tunnel = ngrok.connect(5000)
+print("Ngrok Tunnel URL:", ngrok_tunnel.public_url)
 
 # Gemini APIの設定
 genai.configure(api_key=GEMINI_API_KEY)
