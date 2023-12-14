@@ -1,8 +1,14 @@
 version: '3.8'
 services:
-  linebot:
+  geminowl:
     build: .
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - LINE_ACCESS_TOKEN=${LINE_ACCESS_TOKEN}
+      - LINE_CHANNEL_SECRET=${LINE_CHANNEL_SECRET}
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    volumes:
+      - .:/app
     ports:
       - "5000:5000"
+    command: python gemini_line_bot.py
